@@ -10,7 +10,7 @@
 
 <http://adp.athlinks.com/2017/01/rdf-schema> a owl:Ontology ;
   owl:imports <http://topbraid.org/schema/> ;
-  rdfs:label "The Athlinks Schema vocabulary".
+  rdfs:label "The Athlinks Schema vocabulary" .
 
 ### CLASSES
 
@@ -20,52 +20,52 @@ athlinks:TimingInterval
   rdfs:label "Timing interval" ;
   rdfs:subClassOf schema:Place .
   #members:
-  #athlinks:defaultPace;
-  #athlinks:distanceFromStart;
-  #athlinks:distance;
-  #schema:fromLocation;
-  #schema:toLocation;
+  #athlinks:defaultPace ;
+  #athlinks:distanceFromStart ;
+  #athlinks:distance ;
+  #schema:fromLocation ;
+  #schema:toLocation ;
 
-athlinks:TimingPoint a rdfs:Class;
-  rdfs:subClassOf schema:Place;
-  rdfs:label "Timing point";
-  rdfs:comment "A point located within a timing interval at which sensors are deployed to capture tag reads of passing athletes.".
+athlinks:TimingPoint a rdfs:Class ;
+  rdfs:subClassOf schema:Place ;
+  rdfs:label "Timing point" ;
+  rdfs:comment "A point located within a timing interval at which sensors are deployed to capture tag reads of passing athletes." .
 
-athlinks:TagRead a rdfs:Class;
-  rdfs:label "RFID tag read";
+athlinks:TagRead a rdfs:Class ;
+  rdfs:label "RFID tag read" ;
   rdfs:comment "The representation of a raw reading of an RFID tag." .
   #members:
-  #athlinks:timingDevice;
-  #schema:agent;
-  #schema:location;
-  #athlinks:rawTime;
-  #athlinks:adjustedTime.
+  #athlinks:timingDevice ;
+  #schema:agent ;
+  #schema:location ;
+  #athlinks:rawTime ;
+  #athlinks:adjustedTime .
 
-athlinks:IntervalResult a rdfs:Class;
-  rdfs:label "Interval Result";
-  rdfs:comment "The duration calculated for an interval by an actor.";
+athlinks:IntervalResult a rdfs:Class ;
+  rdfs:label "Interval Result" ;
+  rdfs:comment "The duration calculated for an interval by an actor." ;
   rdfs:subClassOf schema:MoveAction .
   #members:
-  #athlinks:beginTagRead;
-  #athlinks:endTagRead;
-  #athlinks:bib;
-  #schema:duration;
-  #athlinks:timingInterval;
-  #athlinks:ranking;
+  #athlinks:beginTagRead ;
+  #athlinks:endTagRead ;
+  #athlinks:bib ;
+  #schema:duration ;
+  #athlinks:timingInterval ;
+  #athlinks:ranking ;
   #athlinks:chipTime .
   #athlinks:clockTime .
 
-athlinks:BracketRanking a rdfs:Class;
-  rdfs:label "Bracket Ranking";
+athlinks:BracketRanking a rdfs:Class ;
+  rdfs:label "Bracket Ranking" ;
   rdfs:comment "A raking of an Interval Result when ranked within a Bracket." .
   #members:
-  #athlinks:bracket;
-  #athlinks:intervalResult;
-  #athlinks:timingInterval;
-  #athlinks:rank.
-  #athlinks:agePercentage.
+  #athlinks:bracket ;
+  #athlinks:intervalResult ;
+  #athlinks:timingInterval ;
+  #athlinks:rank .
+  #athlinks:agePercentage .
 
-athlinks:Bracket a rdfs:Class.
+athlinks:Bracket a rdfs:Class .
 
 athlinks:AthleticRace
   a owl:Class ;
@@ -91,42 +91,42 @@ athlinks:AthleticSeries
 
 ## PROPERTIES
 
-athlinks:rank a owl:DataTypeProperty;
-  rdfs:domain athlinks:BracketRanking;
-  rdfs:range schema:Integer.
+athlinks:rank a owl:DataTypeProperty ;
+  rdfs:domain athlinks:BracketRanking ;
+  rdfs:range schema:Integer .
 
-athlinks:timingInterval a owl:ObjectProperty;
-  rdfs:domain athlinks:IntervalResult;
-  rdfs:label "The Interval component of the course";
+athlinks:timingInterval a owl:ObjectProperty ;
+  rdfs:domain athlinks:IntervalResult ;
+  rdfs:label "The Interval component of the course" ;
   schema:rangeIncludes schema:ExerciseAction .
 
-athlinks:bracket a owl:ObjectProperty;
-  rdfs:domain athlinks:BracketRanking;
-  rdfs:range athlinks:Bracket.
+athlinks:bracket a owl:ObjectProperty ;
+  rdfs:domain athlinks:BracketRanking ;
+  rdfs:range athlinks:Bracket .
 
-athlinks:endTagRead a owl:ObjectProperty;
-  rdfs:domain athlinks:IntervalResult;
-  rdfs:range athlinks:TagRead.
+athlinks:endTagRead a owl:ObjectProperty ;
+  rdfs:domain athlinks:IntervalResult ;
+  rdfs:range athlinks:TagRead .
 
-athlinks:beginTagRead a owl:ObjectProperty;
-  rdfs:domain athlinks:IntervalResult;
-  rdfs:range athlinks:TagRead.
+athlinks:beginTagRead a owl:ObjectProperty ;
+  rdfs:domain athlinks:IntervalResult ;
+  rdfs:range athlinks:TagRead .
 
-athlinks:timingDevice a owl:ObjectProperty;
-  rdfs:domain athlinks:TagRead;
-  rdfs:range schema:Thing.
+athlinks:timingDevice a owl:ObjectProperty ;
+  rdfs:domain athlinks:TagRead ;
+  rdfs:range schema:Thing .
 
-athlinks:rawTime a owl:DataTypeProperty;
-  rdfs:domain athlinks:TagRead;
-  rdfs:range schema:DateTime.
+athlinks:rawTime a owl:DataTypeProperty ;
+  rdfs:domain athlinks:TagRead ;
+  rdfs:range schema:DateTime .
 
-athlinks:adjustedTime a owl:DataTypeProperty;
-  rdfs:domain athlinks:TagRead;
-  rdfs:range schema:DateTime.
+athlinks:adjustedTime a owl:DataTypeProperty ;
+  rdfs:domain athlinks:TagRead ;
+  rdfs:range schema:DateTime .
 
-athlinks:ranking a owl:ObjectProperty;
-  rdfs:domain athlinks:IntervalResult;
-  rdfs:range athlinks:BracketRanking.
+athlinks:ranking a owl:ObjectProperty ;
+  rdfs:domain athlinks:IntervalResult ;
+  rdfs:range athlinks:BracketRanking .
 
 athlinks:defaultPace
   a owl:ObjectProperty ;
@@ -143,12 +143,12 @@ athlinks:distance
   rdfs:range schema:QuantitativeValue .
 
 athlinks:raceType
-  a owl:DataTypeProperty;
+  a owl:DataTypeProperty ;
   rdfs:range [ a xsd:string ;
                 owl:oneOf ("triathlon" "5k" "10k" "marathon" "other")
               ] .
 athlinks:bib
-  a owl:DataTypeProperty;
+  a owl:DataTypeProperty ;
   rdfs:range xsd:string .
 
 athlinks:pace
@@ -156,22 +156,22 @@ athlinks:pace
   rdfs:range schema:QuantitativeValue .
 
 athlinks:seriesType
-  a owl:DataTypeProperty;
+  a owl:DataTypeProperty ;
   rdfs:range [ a xsd:string ;
                 owl:oneOf("Master" "Social" "Points" "Series")
               ] .
 
 athlinks:clockTime
   a owl:DataTypeProperty ;
-  rdfs:domain athlinks:IntervalResult;
+  rdfs:domain athlinks:IntervalResult ;
   rdfs:range schema:Duration .
 
 athlinks:chipTime
   a owl:DataTypeProperty ;
-  rdfs:domain athlinks:IntervalResult;
+  rdfs:domain athlinks:IntervalResult ;
   rdfs:range schema:Duration .
 
 athlinks:agePercentage
   a owl:DataTypeProperty ;
-  rdfs:domain athlinks:IntervalResult;
+  rdfs:domain athlinks:IntervalResult ;
   rdfs:range schema:Decimal .
