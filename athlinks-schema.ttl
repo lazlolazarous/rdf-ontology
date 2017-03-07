@@ -78,13 +78,13 @@ athlinks:AthleticRace
 athlinks:AthleticEvent
   a owl:Class ;
   rdfs:comment "An Athletic Event, a group of Athletic Races that are all part of the same event." ;
-  rdfs:label "Athletic Race" ;
+  rdfs:label "Athletic Event" ;
   rdfs:subClassOf schema:SportsEvent .
 
 athlinks:AthleticSeries
   a owl:Class ;
   rdfs:comment "An Athletic Series, a group of Athletic Events that are part of the same series." ;
-  rdfs:label "Athletic Race" ;
+  rdfs:label "Athletic Series" ;
   rdfs:subClassOf schema:SportsEvent .
   #members:
   #athlinks:seriesType ;
